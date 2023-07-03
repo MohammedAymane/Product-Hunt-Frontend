@@ -1,4 +1,4 @@
-import { NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +19,6 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  schemas: [NO_ERRORS_SCHEMA],
   declarations: [
     AppComponent,
     FooterComponent,
