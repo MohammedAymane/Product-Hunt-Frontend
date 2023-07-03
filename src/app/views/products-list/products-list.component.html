@@ -1,0 +1,37 @@
+<section class="text-center container">
+  <div class="row m-2">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light">Liste des Produits</h1>
+      <p class="lead text-body-secondary">
+        Choisissez la date de parution des produits
+      </p>
+      <div class="row g-3">
+        <div class="col-10">
+          <input
+            type="date"
+            [(ngModel)]="date"
+            class="form-control"
+            name="date"
+          />
+        </div>
+        <button
+          class="col-2 btn btn-primary"
+          (click)="searchProductsByDate(date)"
+        >
+          Chercher
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="p-5 bg-body-tertiary">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <app-product-item
+        *ngFor="let product of products"
+        [product]="product"
+      ></app-product-item>
+    </div>
+  </div>
+</div>
