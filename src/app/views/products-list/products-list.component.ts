@@ -19,7 +19,12 @@ export class ProductsListComponent {
     // Récupère tous les produits
     this.productService
       .getProducts()
-      .subscribe((products: Product[]) => (this.products = products));
+      .subscribe(
+        (products: Product[]) =>
+          (this.products = products.filter(
+            (product) => product.topics.length >= 2
+          ))
+      );
   }
 
   searchProductsByDate(date: string): void {
